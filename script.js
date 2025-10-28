@@ -226,64 +226,64 @@ const quizGame = () => {
       isChecked: false,
       selected: "",
     },
-    // {
-    //   id: 5,
-    //   question: "Which bowler has taken the most wickets in Test cricket?",
-    //   options: [
-    //     "Muttiah Muralitharan",
-    //     "Shane Warne",
-    //     "James Anderson",
-    //     "Anil Kumble",
-    //   ],
-    //   answer: "Muttiah Muralitharan",
-    //   isChecked: false,
-    //   selected: "",
-    // },
-    // {
-    //   id: 6,
-    //   question: "In cricket, how many players are there on a team?",
-    //   options: ["10", "11", "12", "9"],
-    //   answer: "11",
-    //   isChecked: false,
-    //   selected: "",
-    // },
-    // {
-    //   id: 7,
-    //   question: "Which Indian cricketer is nicknamed 'Hitman'?",
-    //   options: ["KL Rahul", "Rohit Sharma", "Hardik Pandya", "Shikhar Dhawan"],
-    //   answer: "Rohit Sharma",
-    //   isChecked: false,
-    //   selected: "",
-    // },
-    // {
-    //   id: 8,
-    //   question: "Who scored the fastest century in ODI cricket?",
-    //   options: [
-    //     "AB de Villiers",
-    //     "Chris Gayle",
-    //     "Corey Anderson",
-    //     "Shahid Afridi",
-    //   ],
-    //   answer: "AB de Villiers",
-    //   isChecked: false,
-    //   selected: "",
-    // },
-    // {
-    //   id: 9,
-    //   question: "What is the length of a cricket pitch in yards?",
-    //   options: ["20", "22", "24", "25"],
-    //   answer: "22",
-    //   isChecked: false,
-    //   selected: "",
-    // },
-    // {
-    //   id: 10,
-    //   question: "Which country hosted the 2023 ICC Cricket World Cup?",
-    //   options: ["Australia", "India", "England", "South Africa"],
-    //   answer: "India",
-    //   isChecked: false,
-    //   selected: "",
-    // },
+    {
+      id: 5,
+      question: "Which bowler has taken the most wickets in Test cricket?",
+      options: [
+        "Muttiah Muralitharan",
+        "Shane Warne",
+        "James Anderson",
+        "Anil Kumble",
+      ],
+      answer: "Muttiah Muralitharan",
+      isChecked: false,
+      selected: "",
+    },
+    {
+      id: 6,
+      question: "In cricket, how many players are there on a team?",
+      options: ["10", "11", "12", "9"],
+      answer: "11",
+      isChecked: false,
+      selected: "",
+    },
+    {
+      id: 7,
+      question: "Which Indian cricketer is nicknamed 'Hitman'?",
+      options: ["KL Rahul", "Rohit Sharma", "Hardik Pandya", "Shikhar Dhawan"],
+      answer: "Rohit Sharma",
+      isChecked: false,
+      selected: "",
+    },
+    {
+      id: 8,
+      question: "Who scored the fastest century in ODI cricket?",
+      options: [
+        "AB de Villiers",
+        "Chris Gayle",
+        "Corey Anderson",
+        "Shahid Afridi",
+      ],
+      answer: "AB de Villiers",
+      isChecked: false,
+      selected: "",
+    },
+    {
+      id: 9,
+      question: "What is the length of a cricket pitch in yards?",
+      options: ["20", "22", "24", "25"],
+      answer: "22",
+      isChecked: false,
+      selected: "",
+    },
+    {
+      id: 10,
+      question: "Which country hosted the 2023 ICC Cricket World Cup?",
+      options: ["Australia", "India", "England", "South Africa"],
+      answer: "India",
+      isChecked: false,
+      selected: "",
+    },
   ];
 
   let index = 0;
@@ -959,4 +959,4 @@ for (let key in projects) {
 
 jsPorject.append(fragment);
 
-document.querySelector("#jsProject button:last-child").click();
+document.querySelector("#jsProject button:first-child").click();
