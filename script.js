@@ -431,24 +431,22 @@ const quizGame = () => {
 
   // options.addEventListener('c')
 
+  replayBtn.addEventListener("click", () => {
+    document.querySelector(".quizPlayButton").style.display = "none";
+    document.getElementById("score").style.display = "none";
 
-    replayBtn.addEventListener("click", () => {
-         document.querySelector(".quizPlayButton").style.display = "none"
-   document.getElementById("score").style.display = "none"
+    form.style.display = "block";
+    document.querySelector(".action-button").style.display = "flex";
 
-     form.style.display = "block"
-    document.querySelector(".action-button").style.display = "flex"
+    index = 0;
+    score = 0;
 
-      index = 0;
-      score = 0;
-
-      for (const question of cricketQuiz) {
+    for (const question of cricketQuiz) {
       question.selected = "";
       question.isChecked = false;
+    }
 
-      }
-
-       question.textContent = ` Q${cricketQuiz[index].id}. ${cricketQuiz[index].question}`;
+    question.textContent = ` Q${cricketQuiz[index].id}. ${cricketQuiz[index].question}`;
     optionLabel.forEach((label, qn) => {
       label.textContent = `${cricketQuiz[index].options[qn]}`;
     });
@@ -457,26 +455,22 @@ const quizGame = () => {
       input.value = `${cricketQuiz[index].options[op]}`;
       //  input.name = `${cricketQuiz[index].id}`
     });
-    
-    });
-  
+  });
 
   document.getElementById("submit").addEventListener("click", () => {
     let scorePara = document.getElementById("score");
-    
-    scorePara.textContent = `Scored: ${score}/${cricketQuiz.length}`;
-    
-    document.querySelector(".quizPlayButton").style.display = "block"
-    scorePara.style.display="block"
 
+    scorePara.textContent = `Scored: ${score}/${cricketQuiz.length}`;
+
+    document.querySelector(".quizPlayButton").style.display = "block";
+    scorePara.style.display = "block";
 
     submitBtn.style.display = "none";
     nextBtn.style.display = "block";
     previousBtn.style.display = "none";
 
-
-    form.style.display = "none"
-    document.querySelector(".action-button").style.display = "none"
+    form.style.display = "none";
+    document.querySelector(".action-button").style.display = "none";
     form.reset();
   });
 
@@ -697,10 +691,19 @@ const todoList = () => {
 
 const clickerGame = () => {
   root.replaceChildren();
+
   root.style.position = "relative";
 
-  root.addEventListener("click", (e) => {
-    console.log(e);
+  const clickerGameContainer = document.createElement("div");
+  clickerGameContainer.style.height = "100vh";
+  clickerGameContainer.style.width = "100%";
+  clickerGameContainer.setAttribute("id", "gameContainer");
+  root.append(clickerGameContainer);
+
+  // const gameContainer = document.getElementById("gameContainer")
+
+  clickerGameContainer.addEventListener("click", (e) => {
+    console.log("hello");
 
     const bubble = document.createElement("div");
     bubble.classList.add("bubble");
@@ -710,7 +713,7 @@ const clickerGame = () => {
       Math.random() * 360
     )}deg, 100%,50% )`;
 
-    const rect = root.getBoundingClientRect();
+    const rect = clickerGameContainer.getBoundingClientRect();
     console.log(rect);
 
     const x = e.x - rect.left; // 25 = half bubble size (for centering)
@@ -719,7 +722,7 @@ const clickerGame = () => {
     bubble.style.top = `${y - 50}px`;
     bubble.style.left = `${x}px`;
 
-    root.append(bubble);
+    clickerGameContainer.append(bubble);
 
     setTimeout(() => {
       bubble.remove();
