@@ -898,6 +898,62 @@ const timer = () => {
   }, 1000);
 };
 
+//  Stop Watch
+
+const stopWatch = () => {
+  const dom = `  <div id="stopWatch" class="flex flex-col stopWatch" >
+        <p id="para">00:00:00</p>
+        <button style="color:black;"   id="stopPauseBtn">
+          <img src="play.svg" alt="" srcset="" id="playBtn">
+          <img src="pause.svg" alt="" srcset="" class="hidden" id="pauseBtn">
+        </button>
+      </div>`;
+
+  root.replaceChildren();
+  root.insertAdjacentHTML("afterbegin", dom);
+  addClassToRoot(["flex", "flex-col", "align-center"]);
+
+  const stopPauseBtn = document.getElementById("stopPauseBtn");
+  const playBtn = document.getElementById("playBtn");
+  const pauseBtn = document.getElementById("pauseBtn");
+  const para = document.getElementById("para");
+  stopPauseBtn.addEventListener("click", () => {
+    stopPauseBtn.classList.toggle("stopToggleBtn");
+  });
+
+  let id;
+
+   let hr = 0,
+      min = 0,
+      sec = 0;
+
+
+  playBtn.addEventListener("click", () => {
+   
+   id =  setInterval(() => {
+      sec++;
+      if (sec > 60) {
+        min++;
+        sec = 0;
+      }
+
+      if (min > 60) {
+        hr++;
+        min = 0;
+      }
+
+      para.textContent = `${hr < 10 ? "0" + hr : hr}:${
+        min < 10 ? "0" + min : min
+      }:${sec < 10 ? "0" + sec : sec}`;
+    }, 1000);
+  });
+
+  pauseBtn.addEventListener('click', () => {
+   
+      clearInterval(id)
+  })
+};
+
 const projects = {
   randomQuotes: {
     name: "Random Quotes",
@@ -939,6 +995,10 @@ const projects = {
     name: "Cricket Quiz",
     fun: quizGame,
   },
+  stopWatch: {
+    name: "Stopwatch",
+    fun: stopWatch,
+  },
 };
 
 const jsPorject = document.getElementById("jsProject");
@@ -962,4 +1022,4 @@ for (let key in projects) {
 
 jsPorject.append(fragment);
 
-document.querySelector("#jsProject button:first-child").click();
+document.querySelector("#jsProject button:last-child").click();

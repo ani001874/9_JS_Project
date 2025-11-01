@@ -71,6 +71,9 @@ body {
   align-items: center;
 }
 
+.hidden {
+  display: none;
+}
 #color-container {
   gap: 20px;
   height: 100%;
@@ -405,4 +408,40 @@ body {
   border: none;
   border-radius: 8px;
   font-size: 18px;
+}
+
+
+.stopWatch {
+  margin-top: 50px;
+
+  p {
+    font-size: 30px;
+    font-weight: 800;
+  }
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height:25px;
+    border-radius: 50%;
+    align-self: center;
+    padding: 18px;
+    border:none;
+    background-color: #4e4848;
+    margin-top: 15px;
+    cursor: pointer;
+  }
+}
+
+ .stopToggleBtn {
+    img:first-child {
+      display: none;
+    }
+
+     img:last-child {
+      display: block;
+    }
+
 }
